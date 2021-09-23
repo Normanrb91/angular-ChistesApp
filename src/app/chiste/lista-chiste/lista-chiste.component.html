@@ -1,0 +1,11 @@
+
+<chiste-form
+    (crearEventoChiste)="agregarChiste($event)"
+></chiste-form>
+    
+<card-chiste
+    *ngFor="let chis of chistes"
+
+    [chiste]="chis"
+    (eliminarChiste)="chisteEliminar($event)"
+></card-chiste>

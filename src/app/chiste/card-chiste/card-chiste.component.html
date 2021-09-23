@@ -1,0 +1,28 @@
+<div class="card mt-4" style="width: 70%; margin: auto;">
+
+    <div class="card-body">
+
+        <h4 class="card-title">{{data.chiste}}</h4>
+
+        <p class="card-text mt-2"
+            [hidden]="data.oculto">{{data.respuesta}}</p>
+        
+        <button 
+            *ngIf="data.oculto"
+            (click)="data.toggle()"
+            class="btn btn-warning me-2 mt-2 ">Mostrar
+        </button>
+
+        <button 
+            *ngIf="!data.oculto"
+            (click)="data.toggle()"
+            class="btn btn-warning me-2 mt-2">Ocultar
+        </button>
+
+        <button 
+            (click)="eliminarItem()"
+            class="btn btn-danger mt-2">Eliminar
+        </button>
+
+    </div>
+</div>

@@ -1,0 +1,34 @@
+
+<div class="card mt-5" style="width: 70%; margin: auto;">
+
+    <div class="card-body">
+
+    <h4 class="card-title mb-4">Crear Chiste</h4>
+
+    <form (ngSubmit)="crearChiste()">
+
+        <div class="form-group mb-3">
+            <input type="text"
+                class="form-control"
+                placeholder="Escribe el chiste..."
+                name="chiste"
+                [(ngModel)] = "chiste">
+        </div>
+
+        <div class="form-group mb-3">
+            <input type="text"
+                class="form-control"
+                placeholder="Escribe la respuesta..."
+                name="respuesta"
+                [(ngModel)] = "respuesta">
+        </div>
+
+        <button type="submit"
+            class="btn btn-primary">
+            Agregar
+        </button>
+
+    </form>
+
+</div>
+</div>

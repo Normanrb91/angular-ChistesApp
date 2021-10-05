@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Chiste } from '../Chiste';
+import { ServicioChiste } from '../ServicioChiste';
 
 @Component({
   selector: 'lista-chiste',
@@ -8,27 +9,24 @@ import { Chiste } from '../Chiste';
 
 export class ListaChisteComponent{
 
+  servicio = new ServicioChiste();
+
   chistes: Chiste[];
 
   constructor(){
-    this.chistes = [
-      new Chiste('Que le dice un pez chico a uno grande', 'Pezón'),
-    ]
+    this.chistes = this.servicio.chistes;
 
   }
 
   agregarChiste(chiste: Chiste){
-    this.chistes.push(chiste);    
-    
+
+    this.servicio.agregarChiste(chiste);
+
   }
 
   chisteEliminar(chiste: Chiste){
 
-    let indice = this.chistes.indexOf(chiste);
-
-    if (indice !== -1) {
-      this.chistes.splice(indice, 1);
-    }
+    this.servicio.eliminarChiste(chiste);
     
   }
 

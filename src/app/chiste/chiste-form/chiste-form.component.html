@@ -5,26 +5,37 @@
 
     <h4 class="card-title mb-4">Crear Chiste</h4>
 
-    <form (ngSubmit)="crearChiste()">
+    <form [formGroup]= "formChiste">
 
         <div class="form-group mb-3">
             <input type="text"
                 class="form-control"
                 placeholder="Escribe el chiste..."
-                name="chiste"
-                [(ngModel)] = "chiste">
+                formControlName="chiste"
+                [ngClass]="{
+                    'dangerB': campoInvalido('chiste'),
+                    'successB': formChiste.controls.chiste.valid
+                }" 
+                #chiste>
         </div>
-
+        <p *ngIf="campoInvalido('chiste')" class="text-danger">{{messageError('chiste')}}</p>
+            
         <div class="form-group mb-3">
             <input type="text"
                 class="form-control"
                 placeholder="Escribe la respuesta..."
-                name="respuesta"
-                [(ngModel)] = "respuesta">
+                formControlName="respuesta"
+                [ngClass]="{
+                    'dangerB': campoInvalido('respuesta'),
+                    'successB': formChiste.controls.respuesta.valid
+                }" 
+                #respuesta>
         </div>
+        <p *ngIf="campoInvalido('respuesta')" class="text-danger">{{messageError('respuesta')}}</p>
 
-        <button type="submit"
-            class="btn btn-primary">
+        <button
+            class="btn btn-primary"
+            (click)="crearChiste(chiste.value, respuesta.value)" >
             Agregar
         </button>
 

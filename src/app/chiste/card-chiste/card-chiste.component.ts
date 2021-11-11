@@ -8,12 +8,11 @@ import { Chiste } from '../Chiste';
 
 export class CardChisteComponent  {
 
-  @Input('chiste') data: Chiste;
+  @Input('chiste') data!: Chiste;
   @Output() eliminarChiste = new EventEmitter<Chiste>();
 
   eliminarItem(){
-    this.eliminarChiste.emit(this.data);
-    
+    this.eliminarChiste.emit(this.data); 
   }
 
 }

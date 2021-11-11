@@ -7,7 +7,8 @@ export class ServicioChiste{
 
     constructor(){
 
-        this.chistes = [new Chiste('Que le dice un pez chico a uno grande', 'Pezón')]
+        this.chistes = [new Chiste('Que le dice un pez chico a uno grande', 'Pezón'),
+                        new Chiste('¿Quien dice tonterias?', 'Los tontos')]
     }
 
     agregarChiste(chiste: Chiste){
@@ -25,5 +26,10 @@ export class ServicioChiste{
         }
 
     }
+
+    get obtenerChistes(){
+        return this.chistes;
+    }
+
 
 }

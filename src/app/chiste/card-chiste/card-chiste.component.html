@@ -5,7 +5,7 @@
         <h4 class="card-title">{{data.chiste}}</h4>
 
         <p class="card-text mt-2"
-            [hidden]="data.oculto">{{data.respuesta}}</p>
+            [hidden]="data.oculto">{{data.respuesta | clean:'tontos, feo, idiota'}}</p>
         
         <button 
             *ngIf="data.oculto"

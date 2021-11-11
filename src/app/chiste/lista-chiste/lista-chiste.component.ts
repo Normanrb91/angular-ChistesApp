@@ -15,19 +15,16 @@ export class ListaChisteComponent{
 
   constructor(){
     this.chistes = this.servicio.chistes;
-
+    console.log(this.chistes);
+    
   }
 
   agregarChiste(chiste: Chiste){
-
     this.servicio.agregarChiste(chiste);
-
   }
 
   chisteEliminar(chiste: Chiste){
-
     this.servicio.eliminarChiste(chiste);
-    
   }
 
 }

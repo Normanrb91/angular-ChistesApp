@@ -12,6 +12,7 @@ export class Chiste {
         this.oculto = true;
     }
 
+
     toggle(){
         this.oculto = !this.oculto;
     }
